@@ -4,6 +4,43 @@ void main() {
   runApp(const MyApp());
 }
 
+class HelloName extends StatefulWidget {
+  const HelloName({super.key});
+
+  @override
+  State<HelloName> createState() => _HelloNameState();
+}
+
+class _HelloNameState extends State<HelloName> {
+  var name = "";
+
+  @override
+  Widget build(BuildContext context) {
+    if (name == "") {
+      name = "there";
+    }
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 48.0),
+          child: Text(
+            'Hello $name!',
+            style: const TextStyle(fontSize: 24),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: TextField(
+            onChanged: (newValue) => setState(() {
+              name = newValue;
+            }),
+          ),
+        )
+      ],
+    );
+  }
+}
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -31,7 +68,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const Material(child: HelloName()),
     );
   }
 }
