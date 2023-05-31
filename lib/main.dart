@@ -1,4 +1,6 @@
-import 'package:chai/offerspage.dart';
+import 'package:chai/pages/offers.dart';
+import 'package:chai/pages/order.dart';
+import 'package:chai/pages/menu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -75,11 +77,11 @@ class _MyHomePageState extends State<MyHomePage> {
       body: () {
         switch (i) {
           case 0:
-            return const HelloName();
+            return const Menu();
           case 1:
-            return const OffersPage();
+            return const Offers();
           case 2:
-            return const Placeholder();
+            return const HelloName();
           default:
             return const Placeholder();
         }
