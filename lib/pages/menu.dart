@@ -1,9 +1,11 @@
+import 'package:chai/datamanager.dart';
 import 'package:flutter/material.dart';
 
 import '../datamodel.dart';
 
 class Menu extends StatelessWidget {
-  const Menu({super.key});
+  final DataManager dataManager;
+  const Menu({required this.dataManager, super.key});
 
   @override
   Widget build(BuildContext context) {

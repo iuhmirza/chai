@@ -3,6 +3,8 @@ import 'package:chai/pages/order.dart';
 import 'package:chai/pages/menu.dart';
 import 'package:flutter/material.dart';
 
+import 'datamanager.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -67,6 +69,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var dm = DataManager();
   var i = 0;
   @override
   Widget build(BuildContext context) {
@@ -77,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: () {
         switch (i) {
           case 0:
-            return const Menu();
+            return Menu(dataManager: dm);
           case 1:
             return const Offers();
           case 2:
